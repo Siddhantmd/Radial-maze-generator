@@ -1,9 +1,11 @@
 var endpt
-var w = 800
-var h = 800
+//var w = 800
+//var h = 800
 var lower_bnd = 0.5
 var upper_bnd = 1.5
 function setup() {
+    var w = windowHeight-120
+    var h = windowHeight-120
     createCanvas( w, h);
     background(0);
     stroke(255);
@@ -18,10 +20,11 @@ function setup() {
     strokeWeight(gap/10)
     var circumf
     var num_gaps
-    
-    for (iter = 0; iter < (w/2)/ gap -2; iter= iter+1){
+    console.log(radius)
+    for (iter = (radius/gap)-1; iter <= (w/2)/ gap -2; iter= iter+1){
+//    for (iter = 0; iter < (w/2)/ gap -2; iter= iter+1){
         num_gaps = Math.floor(2.3 * Math.pow( ( 1+ (1/iter)) , iter ))
-        console.log(num_gaps)
+        console.log("iter no. "+iter)
         
         circumf = 2 * PI * radius
         var stpt = Math.floor (random (360))
